@@ -42,3 +42,8 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# Claude Code dev files
+.claude/
+CLAUDE.md
+AGENTS.md
