@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     url: siteUrl,
     locale: "ja_JP",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${profile.nameEn} — ${profile.role}`,
+    description: profile.tagline,
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
@@ -47,6 +55,27 @@ const websiteJsonLd = {
   name: profile.nameEn,
   alternateName: profile.name,
   url: siteUrl,
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.nameEn,
+  alternateName: profile.name,
+  url: siteUrl,
+  jobTitle: profile.role,
+  description: profile.tagline,
+  email: `mailto:${profile.email}`,
+  knowsAbout: profile.skills,
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: profile.education.school,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: profile.location,
+  },
+  sameAs: profile.sns.map((s) => s.url),
 };
 
 export default function RootLayout({
@@ -63,6 +92,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <Navbar />
         <main className="flex-1 pt-16">{children}</main>
