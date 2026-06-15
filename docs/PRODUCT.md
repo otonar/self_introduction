@@ -17,7 +17,7 @@
 
 | 項目 | 内容 |
 |------|------|
-| URL | https://self-introduction-pi-sage.vercel.app |
+| URL | https://aotosuzuki.vercel.app |
 | 開発期間 | 約2週間（2026年5月） |
 | 開発体制 | 個人開発 |
 | 対象ユーザー | 採用担当者・エンジニア・大学の友人 |

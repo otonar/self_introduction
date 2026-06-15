@@ -2,7 +2,7 @@
 
 自己紹介・制作物紹介・授業資料の配布を目的に構築した個人ポートフォリオサイトです。
 
-**[→ Live](https://self-introduction-pi-sage.vercel.app)**
+**[→ Live](https://aotosuzuki.vercel.app)**
 
 ## Tech Stack
 
